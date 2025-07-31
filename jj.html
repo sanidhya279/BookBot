@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Chatbot Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Animated Gradient Background */
+        body {
+            color: white;
+            background: linear-gradient(-45deg, #e73c7e, #ee7752, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Keyframes for the animation */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Content Styling */
+        .content-container {
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 1.25rem;
+            margin-top: 1rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-container">
+        <h1>Welcome to BookBot!
+            Your personal book reccomender!
+        </h1>
+        <p>I should make my absolute appearance here, check the bottom right corner lad.</p>
+    </div>
+
+    <!-- PASTE YOUR WATSONX ASSISTANT CODE SNIPPET HERE -->
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "26921d7a-065d-475f-ba1a-27994704d086", // The ID of this integration.
+        region: "au-syd", // The region your integration is hosted in.
+        serviceInstanceID: "ff2b85e2-ede1-4867-9c52-49531e620aa6", // The ID of your service instance.
+        onLoad: async (instance) => { await instance.render(); }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+    
+</body>
+</html>
